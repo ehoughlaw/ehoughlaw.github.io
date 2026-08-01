@@ -1,8 +1,9 @@
-# Eugene Hough Law Website
+# F. Eugene Hough Attorney Website
 
-1. Upload your portrait as:
-   images/attorney.jpg
+Upload these three items to the main level of the GitHub Pages repository:
 
-2. Push all files to your GitHub Pages repository.
+- index.html
+- style.css
+- images/
 
-The page is a single static HTML/CSS site.
+The portrait is already included as `images/attorney.png`.
