@@ -5,7 +5,6 @@
   --paper: #f5f2ea;
   --ink: #20242a;
   --muted: #666b72;
-  --line: rgba(20, 38, 61, 0.18);
   --shadow: 0 24px 70px rgba(12, 25, 41, 0.18);
 }
 
@@ -36,7 +35,7 @@ body {
 
 .card {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+  grid-template-columns: minmax(0, 1.06fr) minmax(390px, 0.94fr);
   overflow: hidden;
   min-height: 650px;
   background: var(--paper);
@@ -54,33 +53,34 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: center 24%;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 64px 58px;
+  padding: 58px 46px;
   text-align: center;
 }
 
 .eyebrow {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   color: var(--gold);
-  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  font-size: clamp(0.88rem, 1.35vw, 1.05rem);
   font-weight: 700;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 h1 {
   margin: 0;
   color: var(--navy);
-  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-size: clamp(2.8rem, 5.2vw, 4.65rem);
   font-weight: 500;
-  line-height: 0.98;
-  letter-spacing: -0.035em;
+  line-height: 1;
+  letter-spacing: -0.032em;
 }
 
 .rule {
@@ -101,25 +101,25 @@ h1 {
 .credentials {
   max-width: 560px;
   margin-top: 0;
-  margin-bottom: 14px;
+  margin-bottom: 15px;
   color: var(--navy);
-  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.18rem, 2vw, 1.5rem);
   line-height: 1.45;
 }
 
 .standing {
   margin-top: 0;
-  margin-bottom: 22px;
+  margin-bottom: 23px;
   color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.5;
+  font-size: 1.12rem;
+  line-height: 1.48;
 }
 
 .locations {
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 25px;
   color: var(--ink);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -133,21 +133,21 @@ h1 {
   margin-top: 0;
   margin-bottom: 30px;
   color: var(--navy);
-  font-size: 1.08rem;
+  font-size: 1.11rem;
   font-style: italic;
 }
 
 .contact {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 11px;
   align-items: center;
 }
 
 .contact a {
   color: var(--navy);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.08rem;
+  font-size: 1.18rem;
   font-weight: 700;
   text-decoration: none;
   border-bottom: 1px solid transparent;
@@ -162,15 +162,21 @@ h1 {
 footer {
   width: min(900px, 100%);
   margin: 22px auto 0;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.76);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   line-height: 1.55;
   text-align: center;
 }
 
 footer p {
   margin: 0;
+}
+
+@media (max-width: 980px) {
+  .eyebrow {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 860px) {
@@ -188,7 +194,7 @@ footer p {
   }
 
   .portrait {
-    object-position: center 34%;
+    object-position: center 20%;
   }
 
   .content {
@@ -206,7 +212,7 @@ footer p {
   }
 
   .eyebrow {
-    letter-spacing: 0.09em;
+    letter-spacing: 0.07em;
   }
 
   .locations span {
