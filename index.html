@@ -5,11 +5,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eugene Hough, Attorney at Law</title>
 <style>
-html,body{margin:0;padding:0;background:#0b1f3a;}
-img{display:block;width:100%;height:auto;}
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #0b1f3a;
+  }
+
+  .desktop-page {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .mobile-page {
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+    .desktop-page {
+      display: none;
+    }
+
+    .mobile-page {
+      display: block;
+      width: 100%;
+      background: #0b1f3a;
+    }
+
+    /* The original artwork is 1600 × 960.
+       The blue footer begins at roughly 827px from the top. */
+    .mobile-panel {
+      position: relative;
+      width: 100%;
+      height: 103.4vw;
+      overflow: hidden;
+      background: #0b1f3a;
+    }
+
+    .mobile-panel img {
+      position: absolute;
+      top: 0;
+      width: 200vw;
+      max-width: none;
+      height: auto;
+    }
+
+    .mobile-panel.photo img {
+      left: 0;
+    }
+
+    .mobile-panel.details img {
+      left: -100vw;
+    }
+
+    .mobile-footer {
+      position: relative;
+      width: 100%;
+      height: 8.4vw;
+      min-height: 58px;
+      overflow: hidden;
+      background: #0b1f3a;
+    }
+
+    .mobile-footer img {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      max-width: none;
+      height: auto;
+    }
+  }
 </style>
 </head>
 <body>
-<img src="images/landing-page.png" alt="Eugene Hough, Attorney at Law">
+  <img class="desktop-page"
+       src="images/landing-page.png"
+       alt="Eugene Hough, Attorney at Law">
+
+  <main class="mobile-page" aria-label="Eugene Hough, Attorney at Law">
+    <section class="mobile-panel photo" aria-label="Attorney portrait">
+      <img src="images/landing-page.png" alt="">
+    </section>
+
+    <section class="mobile-panel details" aria-label="Practice and contact information">
+      <img src="images/landing-page.png" alt="">
+    </section>
+
+    <section class="mobile-footer" aria-label="Website disclaimer and copyright">
+      <img src="images/landing-page.png" alt="">
+    </section>
+  </main>
 </body>
 </html>
