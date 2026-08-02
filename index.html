@@ -1,101 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eugene Hough, Attorney at Law</title>
-<style>
-  * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: #0b1f3a;
-  }
-
-  .desktop-page {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .mobile-page {
-    display: none;
-  }
-
-  @media (max-width: 700px) {
-    .desktop-page {
-      display: none;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eugene Hough, Attorney at Law</title>
+  <meta name="description" content="Eugene Hough, Attorney at Law. Admitted in Oklahoma and the United States Tax Court.">
+  <style>
+    :root{
+      --navy:#0a2340;
+      --gold:#8a5a17;
+      --cream:#f5efe8;
+      --ink:#0b2340;
     }
-
-    .mobile-page {
-      display: block;
-      width: 100%;
-      background: #0b1f3a;
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      background:var(--navy);
+      color:var(--ink);
+      font-family:Georgia,"Times New Roman",serif;
     }
-
-    /* The original artwork is 1600 × 960.
-       The blue footer begins at roughly 827px from the top. */
-    .mobile-panel {
-      position: relative;
-      width: 100%;
-      height: 103.4vw;
-      overflow: hidden;
-      background: #0b1f3a;
+    .page{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(460px,.85fr);
+      grid-template-rows:1fr auto;
     }
-
-    .mobile-panel img {
-      position: absolute;
-      top: 0;
-      width: 200vw;
-      max-width: none;
-      height: auto;
+    .photo{
+      min-height:0;
+      background:#111;
+      overflow:hidden;
     }
-
-    .mobile-panel.photo img {
-      left: 0;
+    .photo img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
     }
-
-    .mobile-panel.details img {
-      left: -100vw;
+    .details{
+      background:var(--cream);
+      padding:2rem 3.5rem 2.25rem;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      text-align:center;
     }
-
-    .mobile-footer {
-      position: relative;
-      width: 100%;
-      height: 8.4vw;
-      min-height: 58px;
-      overflow: hidden;
-      background: #0b1f3a;
+    .eyebrow{
+      color:var(--gold);
+      font-size:clamp(1.45rem,2.1vw,2.1rem);
+      margin:0 0 .25rem;
     }
-
-    .mobile-footer img {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100vw;
-      max-width: none;
-      height: auto;
+    h1{
+      margin:.05rem 0 .55rem;
+      font-size:clamp(3rem,5vw,5.2rem);
+      line-height:.98;
+      font-weight:500;
+      color:var(--ink);
     }
-  }
-</style>
+    .rule{
+      width:90px;
+      border:0;
+      border-top:2px solid var(--gold);
+      margin:1rem auto 1.35rem;
+    }
+    h2{
+      margin:0 0 .55rem;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.95rem;
+      letter-spacing:.14em;
+      color:var(--ink);
+    }
+    .block{
+      margin:.1rem 0;
+      font-size:clamp(1.15rem,1.6vw,1.55rem);
+      line-height:1.42;
+    }
+    .selective{
+      margin:.3rem 0 .2rem;
+      font-style:italic;
+      font-size:clamp(1.1rem,1.55vw,1.45rem);
+    }
+    .contact{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:2.5rem;
+      margin-top:.7rem;
+      text-align:left;
+    }
+    .label{
+      display:block;
+      margin-bottom:.4rem;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.9rem;
+      font-weight:700;
+      letter-spacing:.12em;
+    }
+    .contact a{
+      color:var(--ink);
+      font-size:clamp(1rem,1.45vw,1.35rem);
+      text-decoration-thickness:1px;
+      text-underline-offset:3px;
+      overflow-wrap:anywhere;
+    }
+    footer{
+      grid-column:1 / -1;
+      background:var(--navy);
+      color:#fff;
+      text-align:center;
+      padding:1rem 1.25rem 1.15rem;
+      font-size:clamp(.82rem,1.15vw,1.05rem);
+      line-height:1.45;
+    }
+    footer p{margin:.15rem auto;max-width:1100px}
+    footer .copyright{font-size:1.05em;margin-top:.45rem}
+
+    @media (max-width: 760px){
+      .page{
+        display:block;
+        min-height:0;
+      }
+      .photo{
+        height:58vh;
+        min-height:410px;
+        max-height:620px;
+      }
+      .photo img{
+        object-position:center 8%;
+      }
+      .details{
+        padding:2rem 1.25rem 2.2rem;
+      }
+      h1{
+        font-size:clamp(2.7rem,13vw,4.2rem);
+      }
+      .eyebrow{font-size:1.45rem}
+      .contact{
+        grid-template-columns:1fr;
+        gap:1.25rem;
+        text-align:center;
+      }
+      footer{
+        padding:1rem .9rem 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <img class="desktop-page"
-       src="images/landing-page.png"
-       alt="Eugene Hough, Attorney at Law">
-
-  <main class="mobile-page" aria-label="Eugene Hough, Attorney at Law">
-    <section class="mobile-panel photo" aria-label="Attorney portrait">
-      <img src="images/landing-page.png" alt="">
+  <main class="page">
+    <section class="photo" aria-label="Portrait of Eugene Hough in his office">
+      <img src="assets/eugene-hough-office.png" alt="Eugene Hough seated at his desk">
     </section>
 
-    <section class="mobile-panel details" aria-label="Practice and contact information">
-      <img src="images/landing-page.png" alt="">
+    <section class="details">
+      <p class="eyebrow">Attorney at Law</p>
+      <h1>Eugene Hough</h1>
+
+      <hr class="rule">
+
+      <h2>ADMITTED TO PRACTICE</h2>
+      <div class="block">Oklahoma<br>United States Tax Court</div>
+
+      <hr class="rule">
+
+      <h2>PRACTICE AREAS</h2>
+      <div class="block">
+        Civil and Corporate Law<br>
+        Wills, Trusts and Estates<br>
+        Tax Resolution
+      </div>
+
+      <hr class="rule">
+
+      <p class="selective">Legal matters accepted on a selective basis.</p>
+
+      <hr class="rule">
+
+      <div class="contact">
+        <div>
+          <span class="label">EMAIL</span>
+          <a href="mailto:office@ehoughlaw.com">office@ehoughlaw.com</a>
+        </div>
+        <div>
+          <span class="label">TELEPHONE</span>
+          <a href="tel:+19185530287">(918) 553-0287</a>
+        </div>
+      </div>
     </section>
 
-    <section class="mobile-footer" aria-label="Website disclaimer and copyright">
-      <img src="images/landing-page.png" alt="">
-    </section>
+    <footer>
+      <p>This website is provided for general informational purposes only. Viewing this website or communicating through it does not create an attorney-client relationship. Representation is undertaken only by mutual agreement confirmed in writing.</p>
+      <p class="copyright">© 2026 Eugene Hough</p>
+    </footer>
   </main>
 </body>
 </html>
